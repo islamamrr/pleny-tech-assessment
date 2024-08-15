@@ -8,6 +8,7 @@ import { FilterProductsComponent } from './components/filter-products/filter-pro
 import { PageFooterComponent } from './components/page-footer/page-footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProductGridComponent } from './components/product-grid/product-grid.component';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ProductGridComponent } from './components/product-grid/product-grid.com
     PageFooterComponent,
     NavbarComponent,
     ProductGridComponent,
+    BreadcrumbComponent,
   ],
   imports: [
     BrowserModule,
