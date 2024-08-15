@@ -1,0 +1,75 @@
+// FONT WEIGHTS:
+// bold 700
+// semibold 600
+// semilight 500
+// light 500
+
+@mixin bold-32 {
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38.73px;
+}
+
+@mixin bold-18 {
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21.78px;
+}
+
+@mixin light-18 {
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.78px;
+}
+
+@mixin bold-16 {
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21.79px;
+}
+
+@mixin light-16 {
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21.79px;
+}
+
+@mixin bold-20 {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24.2px;
+}
+
+@mixin light-14 {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px
+}
+
+@mixin semibold-14 {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16.94px
+}
+
+@mixin bold-12 {
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14.52px;
+}
+
+@mixin semilight-15 {
+    font-family: Avenir Next;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+}

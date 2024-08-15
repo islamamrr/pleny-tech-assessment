@@ -1,0 +1,41 @@
+@import "mixins";
+
+.bold-12 {
+    @include bold-12;
+}
+
+.light-14 {
+    @include light-14;
+}
+
+.semibold-14 {
+    @include semibold-14;
+}
+
+.semilight-15 {
+    @include semilight-15;
+}
+
+.bold-16 {
+    @include bold-16;
+}
+
+.light-16 {
+    @include light-16;
+}
+
+.bold-18 {
+    @include bold-18;
+}
+
+.light-18 {
+    @include light-18;
+}
+
+.bold-20 {
+    @include bold-20;
+}
+
+.bold-32 {
+    @include bold-32;
+}
