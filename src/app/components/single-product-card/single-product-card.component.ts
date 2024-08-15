@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-single-product-card',
+  selector: 'single-product-card',
   templateUrl: './single-product-card.component.html',
   styleUrls: ['./single-product-card.component.scss']
 })
