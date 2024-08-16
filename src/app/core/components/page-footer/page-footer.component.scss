@@ -1,0 +1,31 @@
+.main-container {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 48px;
+    background-color: #1D2939;
+}
+
+.logo {
+    margin-left: 112px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.logo-icon {
+    width: 30px;
+}
+
+.logo-name {
+    color: white;
+}
+
+.trademark {
+    margin-right: 112px;
+    color: #98A2B3;
+}
