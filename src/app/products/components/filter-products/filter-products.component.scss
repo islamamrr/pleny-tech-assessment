@@ -1,0 +1,62 @@
+.main-container {
+    border-radius: 8px;
+    border: 1px solid #42424280;
+    width: max-content;
+    padding: 12px;
+    padding-right: 90px;
+}
+
+.title {
+    color: #1E1E1E;
+}
+
+.product-list {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 3px;
+}
+
+.product-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.radio-container input {
+    display: none;
+}
+
+.radio-container {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    cursor: pointer;
+}
+
+.radio-mark {
+    width: 14px;
+    height: 14px;
+    border: 2px solid #41CCCC;
+    border-radius: 50%;
+    background-color: #fff;
+    position: relative;
+}
+
+.radio-mark::after {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background-color: #41CCCC;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+.radio-container input:checked+::after {
+    transform: translate(-50%, -50%) scale(1);
+}

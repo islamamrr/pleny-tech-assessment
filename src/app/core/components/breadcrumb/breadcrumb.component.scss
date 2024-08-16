@@ -1,6 +1,11 @@
 .container {
     display: flex;
     flex-direction: column;
+    margin-bottom: 51px;
+
+    * {
+        color: #1E1E1E;
+    }
 }
 
 .title {

@@ -1,1 +1,12 @@
-<p>filter-products works!</p>
+<div class="main-container">
+    <span class="title bold-16">Products</span>
+    <ul class="product-list">
+        <li *ngFor="let i of [1,2,3,4,5,6]" class="product-container">
+            <label class="radio-container">
+                <input class="default-radio" name="products" type="radio" />
+                <span class="radio-mark"></span>
+                <span class="light-16">Smartphones <span class="light-16">(11)</span></span>
+            </label>
+        </li>
+    </ul>
+</div>
