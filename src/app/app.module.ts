@@ -11,7 +11,9 @@ import { ProductGridComponent } from './products/components/product-grid/product
 import { BreadcrumbComponent } from './core/components/breadcrumb/breadcrumb.component';
 import { IconComponent } from './core/components/icon/icon.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginPageComponent } from './auth/components/login-page/login-page.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -24,11 +26,14 @@ import { FormsModule } from '@angular/forms';
     ProductGridComponent,
     BreadcrumbComponent,
     IconComponent,
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,6 +9,7 @@ import { Product, ProductClass } from '../../models/product';
 export class SingleProductCardComponent implements OnInit
 {
   count = 0;
+  cart = JSON.parse(localStorage.getItem('cart') || '{}');
 
   @Input()
   product?: ProductClass;
@@ -28,17 +29,30 @@ export class SingleProductCardComponent implements OnInit
     }
   }
 
-  fixCategoryName() {
+  fixCategoryName()
+  {
     return this.product?.category.split('-')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' '); 
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
   }
 
-  incrementCount() {
+  incrementCount()
+  {
     this.count += 1;
+    this.cart[this.product!.id] = this.count;
+    localStorage.setItem('cart', JSON.stringify(this.cart));
   }
-  
-  decrementCount() {
+
+  decrementCount()
+  {
     this.count -= 1;
+    if (this.count)
+    {
+      this.cart[this.product!.id] = this.count;
+    } else
+    {
+      delete this.cart[this.product!.id];
+    }
+    localStorage.setItem('cart', JSON.stringify(this.cart));
   }
 }

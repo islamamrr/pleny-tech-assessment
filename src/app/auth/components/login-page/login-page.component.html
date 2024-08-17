@@ -1,0 +1,22 @@
+<navbar></navbar>
+<div class="main-container">
+    <img class="logo-icon" src="../../../assets/images/logo-icon.png">
+    <span class="title semibold-30">Log in to your account</span>
+    <span class="subtitle light-16">Welcome back! Please enter your details.</span>
+
+    <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label class="semilight-14">Username</label>
+            <input class="text-input" type="text" formControlName="username" name="username" placeholder="Enter your username">
+        </div>
+
+        <div class="form-group">
+            <label class="semilight-14">Password</label>
+            <input class="text-input" type="password" formControlName="password" name="password" placeholder="Password">
+        </div>
+        
+        <button [disabled]="loginForm.invalid" type="submit" class="signin-button">Sign in</button>
+    </form>
+
+</div>
+<page-footer></page-footer>

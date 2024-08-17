@@ -12,6 +12,10 @@
     @include light-14;
 }
 
+.semilight-14 {
+    @include semilight-14;
+}
+
 .bold-14 {
     @include bold-14;
 }
@@ -46,6 +50,10 @@
 
 .bold-20 {
     @include bold-20;
+}
+
+.semibold-30 {
+    @include semibold-30;
 }
 
 .bold-32 {

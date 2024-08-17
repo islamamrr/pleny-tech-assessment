@@ -27,6 +27,14 @@
     color: #344054;
 }
 
+@mixin semilight-14 {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #344054;
+}
+
 @mixin semibold-14 {
     font-family: Inter;
     font-size: 14px;
@@ -98,6 +106,13 @@
     font-weight: 700;
     line-height: 24.2px;
     color: #344054;
+}
+
+@mixin semibold-30 {
+    font-family: Inter;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 38px;
 }
 
 @mixin bold-32 {

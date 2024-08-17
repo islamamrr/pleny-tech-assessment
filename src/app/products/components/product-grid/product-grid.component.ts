@@ -17,7 +17,7 @@ export class ProductGridComponent implements OnInit
   sortOption: SortOption = SortOption.RATING;
 
   products: Product[] = [];
-  filteredProducts: Product[] = [];
+  // filteredProducts: Product[] = [];
   totalCount: number = 0;
   totalPages: number = 0;
   currentPage: number = 1;
@@ -59,38 +59,33 @@ export class ProductGridComponent implements OnInit
       });
   }
 
-  nextPage() {
-    if ((this.currentPage * PRODUCTS_PAGE_SIZE) < this.totalCount) {
+  nextPage()
+  {
+    if ((this.currentPage * PRODUCTS_PAGE_SIZE) < this.totalCount)
+    {
       this.currentPage++;
       this.getProducts();
     }
   }
 
-  prevPage() {
-    if (this.currentPage > 1) {
+  prevPage()
+  {
+    if (this.currentPage > 1)
+    {
       this.currentPage--;
       this.getProducts();
     }
   }
 
-  setPage(page: number) {
+  setPage(page: number)
+  {
     this.currentPage = page;
     this.getProducts();
   }
 
-  calculateTotalPages() {
+  calculateTotalPages()
+  {
     this.totalPages = Math.ceil(this.totalCount / PRODUCTS_PAGE_SIZE);
   }
-  
-  // fetchFilteredProducts()
-  // {
-  //   this.searchFilterService.filter$.subscribe(
-  //     (response: any) =>
-  //     {
-  //       this.productsService.getFilteredProducts(response).subscribe({
-  //         next: (response: any) => this.products = response.products
-  //       })
-  //     },
-  //   );
-  // }
+
 }
