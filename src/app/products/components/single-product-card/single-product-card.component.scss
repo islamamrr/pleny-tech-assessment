@@ -86,3 +86,24 @@
         transition: background-color 0.3s ease-out;
     }
 }
+
+.added-cart-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    gap: 8px;
+    border: 0;
+    padding-block: 14px;
+    border-radius: 4px;
+    background-color: #6941c6;
+
+    * {
+        color: white;
+    }
+}
+
+.pointer {
+    cursor: pointer;
+    padding-inline: 10px;
+}

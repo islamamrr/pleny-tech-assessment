@@ -24,7 +24,7 @@
             </div>
             <div>
                 <span class="label light-14">Category: </span>
-                <span class="value semibold-14">{{product?.category}}</span>
+                <span class="value semibold-14">{{fixCategoryName()}}</span>
             </div>
             <div>
                 <span class="label light-14">In stock: </span>
@@ -32,9 +32,14 @@
             </div>
         </div>
         <div class="rating-container">
-            <span class="rating-value bold-16">★☆ {{product?.rating}} </span>
+            <span class="rating-value bold-16">★ {{product?.rating}} </span>
             <span class="rating-count light-16">({{product?.reviews?.length}})</span>
         </div>
-        <button class="cart-button bold-16">ADD TO CART</button>
+        <button *ngIf="!count" (click)="incrementCount()" class="cart-button bold-16">ADD TO CART</button>
+        <button *ngIf="count" #added class="added-cart-button bold-18">
+            <span (click)="decrementCount()" class="pointer">-</span>
+            <span>{{count}}</span>
+            <span (click)="incrementCount()" class="pointer">+</span>
+        </button>
     </div>
 </div>

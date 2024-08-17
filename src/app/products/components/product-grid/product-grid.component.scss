@@ -1,5 +1,52 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
 .products-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dropdown-container {
+    margin-left: 8px;
+    padding-block: 6px;
+    padding-inline: 5px;
+    border-radius: 8px;
+    border: 0.5px solid #42424280;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 72px;
+}
+
+.pagination-button {
+    cursor: pointer;
+    border: 1px solid #F6F6F6;
+    background: 0;
+    border-radius: 30%;
+    margin-right: 13px;
+    padding: 6px 11px;
+
+    &:disabled {
+        cursor: not-allowed;
+        color: #979797;
+    }
+
+    &.active {
+        background-color: #41CCCC;
+    }
 }

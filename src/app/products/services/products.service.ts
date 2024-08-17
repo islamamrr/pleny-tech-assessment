@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ApiClientService } from 'src/app/core/services/api-client.service';
 import { ProductClass } from '../models/product';
+import { PRODUCTS_PAGE_SIZE } from '../constants/constants';
 
 const categoriesToFetch = Object.keys(new ProductClass())
   .filter((key) => key !== "previousPrice")
@@ -16,9 +17,9 @@ export class ProductsService
   {
   }
 
-  getProducts()
+  getProducts(offset?: number, sortOption?: string)
   {
-    return this.apiService.get(`products?select=${categoriesToFetch}`);
+    return this.apiService.get(`products?select=${categoriesToFetch}&limit=${PRODUCTS_PAGE_SIZE}&skip=${offset}&sortBy=${sortOption}&order=desc`);
   }
 
   getProductsCategories()
@@ -26,12 +27,12 @@ export class ProductsService
     return this.apiService.get(`products/categories`);
   }
 
-  getSearchedProducts(searchKey: string) {
-    return this.apiService.get(`products/search?q=${searchKey}`);
+  getSearchedProducts(searchKey: string, offset?: number, sortOption?: string) {
+    return this.apiService.get(`products/search?q=${searchKey}&limit=${PRODUCTS_PAGE_SIZE}&skip=${offset}&sortBy=${sortOption}&order=desc`);
   }
   
-  getFilteredProducts(category: string) {
+  getFilteredProducts(category: string, offset?: number, sortOption?: string) {
     category = category.toLowerCase().replace(" ", "-")
-    return this.apiService.get(`products/category/${category}`);
+    return this.apiService.get(`products/category/${category}?limit=${PRODUCTS_PAGE_SIZE}&skip=${offset}&sortBy=${sortOption}&order=desc`);
   }
 }
