@@ -9,7 +9,7 @@
     <div class="right-section">
         <div class="search-container">
             <icon iconName="search" size=17 color="#999999"></icon>
-            <input placeholder="Search" class="search-bar">
+            <input #searchInput (keyup.enter)="onSearch(searchInput.value)" (keyup.escape)="clearSearch(searchInput)" placeholder="Search" class="search-bar">
         </div>
         <div class="cart-container">
             <icon iconName="cart" color="#667085"></icon>

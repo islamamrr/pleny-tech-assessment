@@ -11,6 +11,7 @@ import { ProductGridComponent } from './products/components/product-grid/product
 import { BreadcrumbComponent } from './core/components/breadcrumb/breadcrumb.component';
 import { IconComponent } from './core/components/icon/icon.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

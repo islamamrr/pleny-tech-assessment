@@ -18,15 +18,20 @@ export class ProductsService
 
   getProducts()
   {
-    return this.apiService.get(`products`);
+    return this.apiService.get(`products?select=${categoriesToFetch}`);
   }
 
   getProductsCategories()
   {
-    return this.apiService.get('products/categories');
+    return this.apiService.get(`products/categories`);
   }
 
   getSearchedProducts(searchKey: string) {
     return this.apiService.get(`products/search?q=${searchKey}`);
+  }
+  
+  getFilteredProducts(category: string) {
+    category = category.toLowerCase().replace(" ", "-")
+    return this.apiService.get(`products/category/${category}`);
   }
 }

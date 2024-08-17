@@ -3,7 +3,7 @@
     <ul class="product-list">
         <li *ngFor="let product of productCategories" class="product-container">
             <label class="radio-container">
-                <input class="default-radio" name="products" type="radio" />
+                <input [(ngModel)]="selectedCategory" value="{{product}}" (change)="onSelect()" class="default-radio" name="products" type="radio" />
                 <span class="radio-mark"></span>
                 <span class="light-16">{{product}} <span class="light-16">(0)</span></span>
             </label>
