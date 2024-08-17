@@ -79,4 +79,10 @@
     padding-block: 14px;
     border-radius: 4px;
     background-color: #41CCCC;
+    transition: background-color 0.3s ease-out;
+    
+    &:hover {
+        background-color: #6941c6;
+        transition: background-color 0.3s ease-out;
+    }
 }

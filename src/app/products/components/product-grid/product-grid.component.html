@@ -1,3 +1,5 @@
 <div class="products-container">
-    <single-product-card *ngFor="let i of [1,2,3,4,5]"></single-product-card>
+    <div *ngFor="let product of products">
+        <single-product-card [product]="product"></single-product-card>
+    </div>
 </div>
