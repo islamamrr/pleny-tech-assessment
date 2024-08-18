@@ -13,7 +13,7 @@
         </div>
         <div class="cart-container">
             <icon iconName="cart" color="#667085"></icon>
-            <span class="cart-value light-10">3</span>
+            <span *ngIf="storedQuantity" class="cart-value light-10">{{storedQuantity}}</span>
         </div>
         <a class="navbar-button semilight-16">Account</a>
     </div>

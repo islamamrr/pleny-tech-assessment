@@ -14,6 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginPageComponent } from './auth/components/login-page/login-page.component';
 import { AppRoutingModule } from './app-routing.module';
+import { StoreModule } from '@ngrx/store';
+import { quantityReducer } from './products/store/cart.reducer';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { AppRoutingModule } from './app-routing.module';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot({ quantity: quantityReducer }),
   ],
   providers: [],
   bootstrap: [AppComponent]

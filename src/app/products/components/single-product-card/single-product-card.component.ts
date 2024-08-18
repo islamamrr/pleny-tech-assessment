@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Product, ProductClass } from '../../models/product';
+import { ProductClass } from '../../models/product';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { decrementQuantity, incrementQuantity } from '../../store/cart.actions';
 
 @Component({
   selector: 'single-product-card',
@@ -8,19 +11,23 @@ import { Product, ProductClass } from '../../models/product';
 })
 export class SingleProductCardComponent implements OnInit
 {
-  count = 0;
-  cart = JSON.parse(localStorage.getItem('cart') || '{}');
+  count: number = 0;
 
+  @Input()
+  cart: any = {};
   @Input()
   product?: ProductClass;
 
-  constructor() { }
+  constructor(private store: Store)
+  {
+  }
 
   ngOnInit(): void
   {
     this.calculatePreviousPrice();
+    this.count = this.cart[this.product!.id]
   }
-
+  
   calculatePreviousPrice()
   {
     if (this.product?.discountPercentage)
@@ -38,14 +45,20 @@ export class SingleProductCardComponent implements OnInit
 
   incrementCount()
   {
-    this.count += 1;
+    this.count = this.count ?? 0;
+    this.count++;
     this.cart[this.product!.id] = this.count;
     localStorage.setItem('cart', JSON.stringify(this.cart));
+    this.store.dispatch(incrementQuantity());
   }
 
   decrementCount()
   {
     this.count -= 1;
+    if (this.count < 0)
+    {
+      this.count = 0;
+    }
     if (this.count)
     {
       this.cart[this.product!.id] = this.count;
@@ -54,5 +67,6 @@ export class SingleProductCardComponent implements OnInit
       delete this.cart[this.product!.id];
     }
     localStorage.setItem('cart', JSON.stringify(this.cart));
+    this.store.dispatch(decrementQuantity());
   }
 }

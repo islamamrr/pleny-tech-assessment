@@ -22,6 +22,7 @@ export class ProductGridComponent implements OnInit
   totalPages: number = 0;
   currentPage: number = 1;
   pageSize: number = PRODUCTS_PAGE_SIZE;
+  cart = JSON.parse(localStorage.getItem('cart') || '{}');
 
   constructor(
     private productsService: ProductsService,
