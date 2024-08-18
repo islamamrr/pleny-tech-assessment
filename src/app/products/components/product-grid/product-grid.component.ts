@@ -17,12 +17,13 @@ export class ProductGridComponent implements OnInit
   sortOption: SortOption = SortOption.RATING;
 
   products: Product[] = [];
-  // filteredProducts: Product[] = [];
   totalCount: number = 0;
   totalPages: number = 0;
   currentPage: number = 1;
   pageSize: number = PRODUCTS_PAGE_SIZE;
   cart = JSON.parse(localStorage.getItem('cart') || '{}');
+
+  SortOption?: SortOption;
 
   constructor(
     private productsService: ProductsService,
@@ -89,4 +90,14 @@ export class ProductGridComponent implements OnInit
     this.totalPages = Math.ceil(this.totalCount / PRODUCTS_PAGE_SIZE);
   }
 
+  onSortChage(sortOption: string)
+  {
+    this.sortOption = sortOption as SortOption;
+    this.getProducts();
+  }
+
+  onSortSelectionChange($event: any)
+  {
+    this.getProducts();
+  }
 }

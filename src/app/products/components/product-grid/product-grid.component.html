@@ -4,8 +4,9 @@
 
         <label>
             <span class="semibold-14">Sort By: </span>
-            <select class="dropdown-container" [(ngModel)]="sortOption">
-                <option *ngFor="let option of sortOptions" [value]="option">{{ option }}</option>
+            <select class="dropdown-container" [(ngModel)]="sortOption" (ngModelChange)="onSortSelectionChange($event)">
+                <option *ngFor="let option of sortOptions" [value]="option">{{
+                    option }}</option>
             </select>
         </label>
 
@@ -18,16 +19,17 @@
         </div>
 
         <div *ngIf="totalPages > 1" class="pagination">
-            <button class="pagination-button semilight-15" (click)="prevPage()" [disabled]="currentPage == 1"><</button>
+            <button class="pagination-button semilight-15" (click)="prevPage()" [disabled]="currentPage == 1">
+                <</button>
 
-            <button class="pagination-button semilight-15"
-                *ngFor="let page of [].constructor(totalPages); let i = index" (click)="setPage(i + 1)"
-                [class.active]="i + 1 === currentPage">
-                {{ i + 1 }}
-            </button>
-            
-            <button class="pagination-button semilight-15" (click)="nextPage()"
-                [disabled]="(currentPage * pageSize) >= totalCount">></button>
+                    <button class="pagination-button semilight-15"
+                        *ngFor="let page of [].constructor(totalPages); let i = index" (click)="setPage(i + 1)"
+                        [class.active]="i + 1 === currentPage">
+                        {{ i + 1 }}
+                    </button>
+
+                    <button class="pagination-button semilight-15" (click)="nextPage()"
+                        [disabled]="(currentPage * pageSize) >= totalCount">></button>
 
         </div>
     </div>

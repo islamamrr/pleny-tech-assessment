@@ -40,7 +40,6 @@ export class NavbarComponent implements OnInit
 
   sumValues(obj: Record<string, number>): number
   {
-    console.log('Object values:', Object.values(obj));
     return Object.values(obj).reduce((acc, value) => acc + value, 0);
   }
 
